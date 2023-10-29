@@ -28,12 +28,6 @@
                     <li><img src="img/fondo.jpg" alt="Slide 1"></li>
                     <li><img src="img/fondo2.jpg" alt="Slide 2"></li>
                     <li><img src="img/fondo3.jpg" alt="Slide 3"></li>
-                    <li><img src="img/fondo4.jpg" alt="Slide 4"></li>
-                    <li><img src="img/fondo.jpg" alt="Slide 5"></li>
-                    <li><img src="img/fondo2.jpg" alt="Slide 6"></li>
-                    <li><img src="img/fondo3.jpg" alt="Slide 7"></li>
-                    <li><img src="img/fondo4.jpg" alt="Slide 8"></li>
-                    <li><img src="img/fondo.jpg" alt="Slide 9"></li>
                   </ul>
                 </div>
             </section>
