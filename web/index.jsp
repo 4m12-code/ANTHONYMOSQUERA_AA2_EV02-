@@ -35,7 +35,7 @@
               <div class="main-box">
                 <img src="img/user.png" class="avatar" alt="avatar">
                 <h1>Iniciar Sesión</h1>
-                <form>
+                <form name="formu" action="miServelet" method="get">
                     <label for="username">Nombre</label>
                     <input type="text" name="username" placeholder="Ingresa nombre de usuario" required>
 

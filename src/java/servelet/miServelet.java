@@ -26,20 +26,26 @@ public class miServelet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response, String msg)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet miServelet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet miServelet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            if(msg == "Ingreso Exitoso"){
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Login con Servlet</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>Bienvenido a la ventana pricipal del SRCA</h1>");
+                out.println("<h2>Resultado del login: " + msg + "</h2>");
+                out.println("</body>");
+                out.println("</html>");
+            }else{
+                out.println("<script>alert('datos incorrectos')</script>");
+            }
+            
         }
     }
 
@@ -55,7 +61,14 @@ public class miServelet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        
+        if("4m12".equals(user) && "abcd1234".equals(pass)){
+            processRequest(request, response, "Ingreso Exitoso");
+        } else {
+            processRequest(request, response, "Ingreso Invalido");
+        }
     }
 
     /**
@@ -69,7 +82,7 @@ public class miServelet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
     }
 
     /**
